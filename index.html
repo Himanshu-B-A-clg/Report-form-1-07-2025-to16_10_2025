@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Placement Tracker - Himanshu B A</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <div class="header-content">
+                <div class="student-info">
+                    <h2 style="font-size:2.1em;color:#fff;background:linear-gradient(90deg,#10b981,#6366f1);padding:0.2em 1.2em;border-radius:18px;display:inline-block;box-shadow:0 2px 16px rgba(16,185,129,0.18);margin-bottom:10px;letter-spacing:1px;">Himanshu B A <span style='font-weight:400'>| Campus Job Tracking</span></h2>
+                    <p>Roll No: 1DS23IS407</p>
+                    <p>Batch: 2026</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Statistics Dashboard -->
+        <section class="stats-dashboard">
+            <div class="stat-card total">
+                <div class="stat-icon">📊</div>
+                <div class="stat-info">
+                    <h3 id="totalApplications">0</h3>
+                    <p>Total Applications</p>
+                </div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-icon">✅</div>
+                <div class="stat-info">
+                    <h3 id="selectedCount">0</h3>
+                    <p>Selected</p>
+                </div>
+            </div>
+            <div class="stat-card pending">
+                <div class="stat-icon">⏳</div>
+                <div class="stat-info">
+                    <h3 id="pendingCount">0</h3>
+                    <p>In Progress</p>
+                </div>
+            </div>
+            <div class="stat-card rejected">
+                <div class="stat-icon">❌</div>
+                <div class="stat-info">
+                    <h3 id="rejectedCount">0</h3>
+                    <p>Rejected</p>
+                </div>
+            </div>
+            <div class="stat-card not-selected">
+                <div class="stat-icon">⚠️</div>
+                <div class="stat-info">
+                    <h3 id="notSelectedCount">0</h3>
+                    <p>Not Shortlisted</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h3>Application Status Distribution</h3>
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Detailed Outcome Analysis</h3>
+                <canvas id="outcomeChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filters-section">
+            <div class="filter-group">
+                <label for="statusFilter">Filter by Status:</label>
+                <select id="statusFilter">
+                    <option value="all">All</option>
+                    <option value="selected">Selected</option>
+                    <option value="rejected">Rejected (1st Round)</option>
+                    <option value="not-selected">Not Shortlisted</option>
+                    <option value="in-progress">In Progress</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="searchBox">Search Company:</label>
+                <input type="text" id="searchBox" placeholder="Search by company name...">
+            </div>
+        </section>
+
+        <!-- Companies Table -->
+        <section class="table-section">
+            <h2>Companies Applied</h2>
+            <div class="table-wrapper">
+                <table id="companiesTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Company Name</th>
+                            <th>Role</th>
+                            <th>CTC/Stipend</th>
+                            <th>Last Date to Register</th>
+                            <th>Status</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Data will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Placement Tracker | Last Updated: October 16, 2025</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
